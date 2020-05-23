@@ -1,4 +1,4 @@
-CC = g++
+CC = clang++
 
 CXXFLAGS = -Wall -Wextra -pedantic -std=c++2a
 LDFLAGS_BASE = -lsfml-graphics -lsfml-window -lsfml-system
@@ -20,6 +20,9 @@ debug: $(EXE)
 
 $(EXE): $(OBJS)
 	$(CC) $(LDFLAGS) $^ -o $@
+
+%.o: %.cc
+	$(CC) $(CXXFLAGS) -c -o $@ $^
 
 clean:
 	$(RM) $(OBJS) $(EXE)
