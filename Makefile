@@ -1,7 +1,7 @@
 CC = clang++
 
 CXXFLAGS = -Wall -Wextra -pedantic -std=c++2a
-LDFLAGS_BASE = -lsfml-graphics -lsfml-window -lsfml-system
+LDFLAGS_BASE = -lsfml-graphics -lsfml-window -lsfml-system -lboost_program_options
 
 vpath %.cc src/ src/Engine src/Engine/Graphics src/Engine/Input src/Engine/Gameplay src/Engine/Options
 

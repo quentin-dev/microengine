@@ -6,6 +6,7 @@ namespace gameplay
     bool GameplayManager::setUp()
     {
         _scenes.push_back(Scene());
+        // TODO: parse from level config file
         _scenes[_currentSceneIndex].setBackground("media/img/backgroundEmpty.png");
         return true;
     }
