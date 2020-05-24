@@ -14,7 +14,7 @@ namespace engine
             Engine() = default;
             ~Engine() = default;
 
-            void setUp();
+            void setUp(std::string pathToIni);
             void tearDown();
 
             void run();

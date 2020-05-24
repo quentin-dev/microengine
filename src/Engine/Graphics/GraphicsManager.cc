@@ -2,15 +2,20 @@
 
 #include <iostream>
 
+#include "../Options/GraphicsOptions.hh"
+
 namespace graphics
 {
 
-    bool GraphicsManager::setUp()
+    bool GraphicsManager::setUp(options::GraphicsOptions options)
     {
-        // TODO: Set these from a config file
-        _window.create(sf::VideoMode(640, 480), "MicroEngine");
-        _window.setFramerateLimit(60);
-        _window.setVerticalSyncEnabled(true);
+        _window.create(
+            sf::VideoMode(options.getWidth(), options.getHeight()),
+            options.getWindowName(),
+            options.getWindowStyle()
+        );
+        _window.setFramerateLimit(options.getFramerateLimit());
+        _window.setVerticalSyncEnabled(options.getEnableVsync());
 
         return true;
     }

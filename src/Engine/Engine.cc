@@ -1,11 +1,19 @@
 #include "Engine.hh"
 
+#include <boost/property_tree/ptree.hpp>
+#include "Options/Utils.hh"
+#include "Options/GraphicsOptions.hh"
+
 namespace engine
 {
 
-    void Engine::setUp()
+    void Engine::setUp(std::string pathToIni)
     {
-        _graphics.setUp();
+        auto pt = options::utils::readIni(pathToIni);
+
+        auto graphicsOptions = options::GraphicsOptions::fromIni(pt);
+
+        _graphics.setUp(graphicsOptions);
         _gameplay.setUp();
         _input.setUp();
     }
