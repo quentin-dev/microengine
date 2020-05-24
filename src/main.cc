@@ -12,7 +12,7 @@ int main(int argc, const char *argv[])
     options_descriptions.add_options()
         (
             "help",
-            "µEngine help"
+            "display µEngine options"
         )
         (
             "settings-file,s",
