@@ -13,18 +13,19 @@ game engine. µEngine aims mostly to be easy-to-understand. This is certainly
 ### Current
 
 - [X] C++20 compliant
+- [X] Configurable settings
 
 ### Upcoming
 
 By order of likeliness:
 
-- [ ] Customizable settings
 - [ ] Command line arguments
 - [ ] Cross-platform
 
 ## Dependencies
 
 - [SFML](https://www.sfml-dev.org/index.php)
+- [Boost Property Tree](https://www.boost.org/doc/libs/1_73_0/doc/html/property_tree.html)
 
 ## Building
 
