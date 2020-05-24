@@ -6,3 +6,6 @@
 
 # Engine binary
 µEngine
+
+# GDB files
+*.gdb_history
