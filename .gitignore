@@ -9,3 +9,7 @@
 
 # GDB files
 *.gdb_history
+
+# Doxygen documentation
+html/
+latex/
