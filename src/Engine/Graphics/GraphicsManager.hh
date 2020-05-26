@@ -5,7 +5,7 @@
 #include "../EventListener.hh"
 
 #include "../Gameplay/Scene.hh"
-#include "../Options/GraphicsOptions.hh"
+#include "../Settings/GraphicsSettings.hh"
 
 
 namespace graphics
@@ -18,7 +18,7 @@ namespace graphics
             GraphicsManager() = default;
             ~GraphicsManager() = default;
 
-            bool setUp(options::GraphicsOptions options);
+            bool setUp(settings::GraphicsSettings options);
             void tearDown();
 
             void update(engine::EventListener *eventListener);

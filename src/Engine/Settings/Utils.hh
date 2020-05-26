@@ -4,7 +4,7 @@
 #include <filesystem>
 #include <iostream>
 
-namespace options::utils
+namespace settings::utils
 {
     boost::property_tree::ptree readIni(std::string pathToIni)
     {

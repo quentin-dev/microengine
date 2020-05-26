@@ -2,12 +2,12 @@
 
 #include <iostream>
 
-#include "../Options/GraphicsOptions.hh"
+#include "../Settings/GraphicsSettings.hh"
 
 namespace graphics
 {
 
-    bool GraphicsManager::setUp(options::GraphicsOptions options)
+    bool GraphicsManager::setUp(settings::GraphicsSettings options)
     {
         _window.create(
             sf::VideoMode(options.getWidth(), options.getHeight()),

@@ -27,7 +27,7 @@ set(SRC
     "src/Engine/Gameplay/Scene.cc"
     "src/Engine/Graphics/GraphicsManager.cc"
     "src/Engine/Input/InputManager.cc"
-    "src/Engine/Options/GraphicsOptions.cc"
+    "src/Engine/Settings/GraphicsSettings.cc"
 )
 
 set(INCLUDE
@@ -35,7 +35,7 @@ set(INCLUDE
     "src/Engine/Gameplay"
     "src/Engine/Input"
     "src/Engine/Input/Commands"
-    "src/Engine/Options"
+    "src/Engine/Settings"
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)

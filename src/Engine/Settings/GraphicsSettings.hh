@@ -3,17 +3,17 @@
 #include <boost/property_tree/ptree.hpp>
 #include <SFML/Window.hpp>
 
-namespace options
+namespace settings
 {
 
-    class GraphicsOptions
+    class GraphicsSettings
     {
         public:
 
-            GraphicsOptions() = default;
-            ~GraphicsOptions() = default;
+            GraphicsSettings() = default;
+            ~GraphicsSettings() = default;
 
-            static GraphicsOptions fromIni(boost::property_tree::ptree &pt);
+            static GraphicsSettings fromIni(boost::property_tree::ptree &pt);
 
             int getWidth()
             {
@@ -65,4 +65,4 @@ namespace options
 
     };
 
-} // !options
+} // !settings
