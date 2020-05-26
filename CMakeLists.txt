@@ -52,13 +52,14 @@ set(LIBRARIES
 
 add_library(microcore OBJECT)
 target_sources(microcore PRIVATE ${SRC})
-target_compile_options(microcore PRIVATE -Wall -Wextra)
+target_compile_options(microcore PRIVATE -Wall -Wextra -Werror)
 target_include_directories(microcore PRIVATE ${INCLUDE})
 target_link_libraries(microcore PRIVATE ${LIBRARIES})
 
 add_executable(engine "src/main.cc")
 target_link_libraries(engine PRIVATE microcore)
-target_compile_options(engine PRIVATE -Wall -Wextra)
+target_compile_options(engine PRIVATE -Wall -Wextra -Werror)
+set_target_properties(engine PROPERTIES OUTPUT_NAME "µEngine")
 
 file(COPY config DESTINATION .)
 file(COPY media DESTINATION .)

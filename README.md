@@ -72,7 +72,7 @@ The usual build steps go like this:
 1. Install dependencies
 2. Clone the repo
 3. `make release` or `make debug` depending on what you want
-4. `./build/engine`
+4. `./build/µEngine`
 
 Otherwise you can always follow the typical CMake build steps:
 
@@ -80,6 +80,7 @@ Otherwise you can always follow the typical CMake build steps:
 2. Clone the repo
 3. `mkdir build && cd build`
 4. `cmake .. && make`
+5. `./µEngine`
 
 ### Documentation
 
