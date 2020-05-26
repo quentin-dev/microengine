@@ -15,6 +15,7 @@ game engine. µEngine aims mostly to be easy-to-understand. This is certainly
 - [X] C++20 compliant
 - [X] Configurable settings
 - [X] Command line arguments
+- [X] Uses a modern build system
 
 ### Upcoming
 
@@ -25,9 +26,15 @@ By order of likeliness:
 
 ## Dependencies
 
+### µEngine
+
 - [SFML](https://www.sfml-dev.org/index.php)
 - [Boost Property Tree](https://www.boost.org/doc/libs/1_73_0/doc/html/property_tree.html)
 - [Boost Program Options](https://www.boost.org/doc/libs/1_73_0/doc/html/program_options.html)
+
+### Documentation
+
+- [Doxygen](https://www.doxygen.nl/)
 
 ## Usage
 
@@ -51,10 +58,31 @@ The settings in `config/settings.ini` correspond to the following table:
 
 ## Building
 
+### µEngine
+
+The "official" build system for µEngine is CMake, but the Makefile is there to provide
+"aliases" to avoid typing long commands every time.
+
+The usual build steps go like this:
+
 1. Install dependencies
 2. Clone the repo
 3. `make release` or `make debug` depending on what you want
-4. `./µEngine` 
+4. `./build/engine`
+
+Otherwise you can always follow the typical CMake build steps:
+
+1. Install dependencies
+2. Clone the repo
+3. `mkdir build && cd build`
+4. `cmake .. && make`
+
+### Documentation
+
+1. Install dependencies
+2. Clone the repo
+3. `make doc`
+4. Open `build/html/index.html` with the web browser of your choice
 
 ## References
 

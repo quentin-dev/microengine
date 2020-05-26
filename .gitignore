@@ -13,3 +13,6 @@
 # Doxygen documentation
 html/
 latex/
+
+# CMake dir
+build/

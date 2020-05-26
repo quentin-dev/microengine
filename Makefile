@@ -1,39 +1,22 @@
-CC = clang++
-
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++2a
-
-LDFLAGS_SFML = -lsfml-graphics -lsfml-window -lsfml-system
-LDFLAGS_BOOST = -lboost_program_options
-LDFLAGS_BASE =  $(LDFLAGS_SFML) $(LDFLAGS_BOOST)
-
-vpath %.cc src/ src/Engine src/Engine/Graphics src/Engine/Input src/Engine/Gameplay src/Engine/Options
-
-OBJS = main.o Engine.o GraphicsManager.o InputManager.o Scene.o Player.o GameplayManager.o GraphicsOptions.o
-EXE = µEngine
-
-DOXYFILE = doc/Doxyfile
-DOCDIR = doc/html/
+BUILDDIR = build
 
 RM += -r
 
-.PHONY: release debug clean doc
+release:
+	cmake -S . -B $(BUILDDIR) -DCMAKE_BUILD_TYPE=Release
+	cmake --build $(BUILDDIR) -j8
 
-release: LDFLAGS += $(LDFLAGS_BASE)
-release: CXXFLAGS += -O3
-release: $(EXE)
+debug:
+	cmake -S . -B $(BUILDDIR) -DCMAKE_BUILD_TYPE=Debug
+	cmake --build $(BUILDDIR) -j8
 
-debug: LDFLAGS += -lasan $(LDFLAGS_BASE)
-debug: CXXFLAGS += -DDEBUG -g3 -O0 -fsanitize=address
-debug: $(EXE)
-
-doc: $(DOXYFILE)
-	doxygen $^
-
-$(EXE): $(OBJS)
-	$(CC) $(LDFLAGS) $^ -o $@
-
-%.o: %.cc
-	$(CC) $(CXXFLAGS) -c -o $@ $^
+.PHONY: doc
+doc:
+	cmake -S . -B $(BUILDDIR)
+	cmake --build $(BUILDDIR) --target doxygen -j8
 
 clean:
-	$(RM) $(OBJS) $(EXE) $(DOCDIR)
+	cmake --build $(BUILDDIR) --target clean
+
+clean-all:
+	$(RM) $(BUILDDIR)

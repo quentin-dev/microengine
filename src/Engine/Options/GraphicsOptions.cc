@@ -23,7 +23,7 @@ namespace options
 
             return options;
         } 
-        catch (std::exception)
+        catch (const std::exception&)
         {
             std::cerr
             << "GraphicsOptions :: fromIni :: Could not parse settings.ini\n"
