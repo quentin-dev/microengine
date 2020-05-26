@@ -12,7 +12,9 @@ OBJS = main.o Engine.o GraphicsManager.o InputManager.o Scene.o Player.o Gamepla
 EXE = µEngine
 
 DOXYFILE = doc/Doxyfile
-DOCDIR = html/
+DOCDIR = doc/html/
+
+RM += -r
 
 .PHONY: release debug clean doc
 
