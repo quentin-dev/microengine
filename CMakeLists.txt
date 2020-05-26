@@ -27,6 +27,7 @@ set(SRC
     "src/Engine/Gameplay/Scene.cc"
     "src/Engine/Graphics/GraphicsManager.cc"
     "src/Engine/Input/InputManager.cc"
+    "src/Engine/Options/Cli.cc"
     "src/Engine/Settings/GraphicsSettings.cc"
 )
 
@@ -35,6 +36,7 @@ set(INCLUDE
     "src/Engine/Gameplay"
     "src/Engine/Input"
     "src/Engine/Input/Commands"
+    "src/Engine/Options"
     "src/Engine/Settings"
 )
 

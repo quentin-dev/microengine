@@ -17,7 +17,7 @@ namespace settings::utils
         else
         {
             std::cerr
-            << "options::utils :: readIni :: "
+            << "settings::utils :: readIni :: "
             << pathToIni << " does not exist!\n";
         }
 

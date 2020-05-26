@@ -26,7 +26,7 @@ namespace settings
         catch (const std::exception&)
         {
             std::cerr
-            << "GraphicsSettings :: fromIni :: Could not parse settings.ini\n"
+            << "GraphicsSettings :: fromIni :: Could not parse settings file\n"
             << "GraphicsSettings :: fromIni :: Falling back to default\n";
 
             return GraphicsSettings();
