@@ -2,6 +2,10 @@
 
 A simple C++ game engine
 
+## Badges
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cf1becc0aaaf40458674feacb206a0eb)](https://www.codacy.com/manual/quentin-dev/microengine?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=quentin-dev/microengine&amp;utm_campaign=Badge_Grade)
+
 ## Goal
 
 My goal when writing µEngine was to learn about the internal workings of a
