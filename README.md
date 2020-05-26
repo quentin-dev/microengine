@@ -42,12 +42,12 @@ By order of likeliness:
 
 ## Usage
 
-## Command line arguments
+### Command line arguments
 
 * `--help`: display µEngine options
 * `-s [--settings-file]`: path to the `settings.ini` file - defaults to `config/settings.ini`
 
-## Settings
+### Settings
 
 The settings in `config/settings.ini` correspond to the following table:
 
