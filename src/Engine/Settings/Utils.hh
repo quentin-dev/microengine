@@ -3,25 +3,12 @@
 #include <boost/property_tree/ini_parser.hpp>
 #include <filesystem>
 #include <iostream>
+#include "../external/toml.hpp"
+#include <fstream>
 
 namespace settings::utils
 {
-    boost::property_tree::ptree readIni(std::string pathToIni)
-    {
-        boost::property_tree::ptree pt;
+    boost::property_tree::ptree readIni(const std::string &pathToIni);
 
-        if (std::filesystem::exists(pathToIni))
-        {
-            boost::property_tree::ini_parser::read_ini(pathToIni, pt);
-        }
-        else
-        {
-            std::cerr
-            << "settings::utils :: readIni :: "
-            << pathToIni << " does not exist!\n";
-        }
-
-        return pt;
-    }
-
+    toml::parse_result readToml(const std::string &pathToToml);
 }

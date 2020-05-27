@@ -3,6 +3,8 @@
 #include <boost/property_tree/ptree.hpp>
 #include <SFML/Window.hpp>
 
+#include "../../external/toml.hpp"
+
 namespace settings
 {
 
@@ -13,7 +15,14 @@ namespace settings
             GraphicsSettings() = default;
             ~GraphicsSettings() = default;
 
+            static GraphicsSettings fromFile(
+                const std::string &settingsFile,
+                const std::string &settingsFormat
+            );
+
             static GraphicsSettings fromIni(boost::property_tree::ptree &pt);
+
+            static GraphicsSettings fromToml(toml::parse_result &config);
 
             int getWidth()
             {

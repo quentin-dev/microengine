@@ -3,17 +3,17 @@
 #include <boost/property_tree/ptree.hpp>
 #include "Settings/Utils.hh"
 #include "Settings/GraphicsSettings.hh"
+#include "Options/Cli.hh"
 
 namespace engine
 {
 
-    void Engine::setUp(std::string pathToIni)
+    void Engine::setUp(const std::string settingsFile, const std::string settingsFormat)
     {
-        auto pt = settings::utils::readIni(pathToIni);
+        auto graphicsSettings = 
+             settings::GraphicsSettings::fromFile(settingsFile, settingsFormat);
 
-        auto graphicsOptions = settings::GraphicsSettings::fromIni(pt);
-
-        _graphics.setUp(graphicsOptions);
+        _graphics.setUp(graphicsSettings);
         _gameplay.setUp();
         _input.setUp();
     }

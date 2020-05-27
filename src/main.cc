@@ -20,15 +20,13 @@ int main(int argc, const char *argv[])
         return 1;
     }
 
-    if (cli.vm.count("help"))
-    {
-        cli.printOptions();
-        return 0;
-    }
-
+    cli.execute();
 
     engine::Engine engine;
-    engine.setUp(cli.vm["settings-file"].as<std::string>());
+    engine.setUp(
+        cli.vm["settings-file"].as<const std::string>(),
+        cli.vm["settings-format"].as<const std::string>()
+    );
 
     engine.run();
     engine.tearDown();

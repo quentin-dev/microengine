@@ -29,15 +29,12 @@ set(SRC
     "src/Engine/Input/InputManager.cc"
     "src/Engine/Options/Cli.cc"
     "src/Engine/Settings/GraphicsSettings.cc"
+    "src/Engine/Settings/Utils.cc"
 )
 
 set(INCLUDE
     "src/Engine"
-    "src/Engine/Gameplay"
-    "src/Engine/Input"
-    "src/Engine/Input/Commands"
-    "src/Engine/Options"
-    "src/Engine/Settings"
+    "src/external"
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
@@ -52,13 +49,13 @@ set(LIBRARIES
 
 add_library(microcore OBJECT)
 target_sources(microcore PRIVATE ${SRC})
-target_compile_options(microcore PRIVATE -Wall -Wextra -Werror)
+target_compile_options(microcore PRIVATE -Wall -Wextra -Wno-unknown-pragmas -Werror)
 target_include_directories(microcore PRIVATE ${INCLUDE})
 target_link_libraries(microcore PRIVATE ${LIBRARIES})
 
 add_executable(engine "src/main.cc")
 target_link_libraries(engine PRIVATE microcore)
-target_compile_options(engine PRIVATE -Wall -Wextra -Werror)
+target_compile_options(engine PRIVATE -Wall -Wextra -Wno-unknown-pragmas -Werror)
 set_target_properties(engine PROPERTIES OUTPUT_NAME "µEngine")
 
 file(COPY config DESTINATION .)

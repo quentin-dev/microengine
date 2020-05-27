@@ -17,9 +17,14 @@ namespace options
             void setUp();
             void parse(int argc, const char *argv[]);
 
+            void execute();
+
             void printOptions();
 
             boostpo::variables_map vm;
+
+            inline static const std::string TOML = "toml";
+            inline static const std::string INI = "ini";
 
         private:
 

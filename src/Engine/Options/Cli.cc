@@ -1,6 +1,7 @@
 #include "Cli.hh"
 
 #include <iostream>
+#include <cstdlib>
 
 namespace options
 {
@@ -13,9 +14,16 @@ namespace options
             "display µEngine options"
         )
         (
-            "settings-file,s",
-            boostpo::value<std::string>()->default_value("config/settings.ini"),
-            "Path to settings.ini"
+            "settings-file",
+            boostpo::value<std::string>()->default_value(
+                "config/settings.toml"
+            ),
+            "path to the settings file"
+        )
+        (
+            "settings-format",
+            boostpo::value<std::string>()->default_value("toml"),
+            "the format of the settings file"
         );
     }
 
@@ -26,6 +34,15 @@ namespace options
             vm
         );
         boostpo::notify(vm);
+    }
+
+    void Cli::execute()
+    {
+        if (vm.count("help"))
+        {
+            printOptions();
+            std::exit(EXIT_SUCCESS);
+        }
     }
 
     void Cli::printOptions()
