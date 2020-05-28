@@ -28,7 +28,12 @@ int main(int argc, const char *argv[])
         cli.vm["settings-format"].as<const std::string>()
     );
 
-    engine.run();
+    if (!cli.vm["dry-run"].as<bool>())
+    {
+        engine.run();
+    }
+
+    // engine.run();
     engine.tearDown();
 
     return 0;

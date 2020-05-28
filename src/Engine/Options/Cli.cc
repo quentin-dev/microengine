@@ -24,6 +24,11 @@ namespace options
             "settings-format",
             boostpo::value<std::string>()->default_value("toml"),
             "format of the settings file"
+        )
+        (
+            "dry-run",
+            boostpo::bool_switch()->default_value(false),
+            "run only setup and tear down"
         );
     }
 
