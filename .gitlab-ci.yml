@@ -1,0 +1,9 @@
+image: sunbr0/microengineci:71aa5349
+
+stages:
+    - build
+
+linux:
+    stage: build
+    script:
+        - make release
