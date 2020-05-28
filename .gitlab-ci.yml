@@ -2,8 +2,20 @@ image: sunbr0/microengineci:71aa5349
 
 stages:
     - build
+    - run
 
-linux:
+build:linux:
     stage: build
     script:
         - make release
+    artifacts:
+        paths:
+            - build/
+
+run:linux:
+    stage: run
+    script:
+        - ./build/µEngine --dry-run
+    dependencies:
+        - build:linux
+
