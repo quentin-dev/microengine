@@ -38,7 +38,7 @@ set(INCLUDE
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
-find_package(Boost 1.72.0 REQUIRED COMPONENTS program_options)
+find_package(Boost 1.71.0 REQUIRED COMPONENTS program_options)
 
 set(LIBRARIES
     Boost::program_options
