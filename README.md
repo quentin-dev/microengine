@@ -45,11 +45,12 @@ By order of likeliness:
 ### Command line arguments
 
 * `--help`: display µEngine options
-* `-s [--settings-file]`: path to the `settings.ini` file - defaults to `config/settings.ini`
+* `--settings-file`: path to the settings file - defaults to `config/settings.toml`
+* `--settings-format`: format of the settings file - defaults to 'toml'
 
 ### Settings
 
-The settings in `config/settings.ini` correspond to the following table:
+The settings in `config/settings.toml` correspond to the following table:
 
 | Section  | Name           | Type        | Default value |
 |----------|----------------|-------------|---------------|

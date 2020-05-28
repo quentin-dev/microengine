@@ -23,7 +23,7 @@ namespace options
         (
             "settings-format",
             boostpo::value<std::string>()->default_value("toml"),
-            "the format of the settings file"
+            "format of the settings file"
         );
     }
 
