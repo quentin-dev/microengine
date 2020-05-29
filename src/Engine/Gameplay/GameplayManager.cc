@@ -14,7 +14,7 @@ namespace gameplay
     void GameplayManager::tearDown()
     {}
 
-    void GameplayManager::update(input::InputManager &input)
+    void GameplayManager::update(const input::InputManager &input)
     {
         input::commands::Command *command = input.handleInput();
         _scenes[_currentSceneIndex].update(command);

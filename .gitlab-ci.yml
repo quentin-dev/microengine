@@ -1,8 +1,14 @@
 image: sunbr0/microengineci:71aa5349
 
 stages:
+    - analyze
     - build
     - run
+
+analyze:static:
+    stage: analyze
+    script:
+        - cppcheck --suppress='*:src/external/*' src/ --force -v
 
 build:linux:
     stage: build

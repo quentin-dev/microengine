@@ -11,10 +11,12 @@ namespace gameplay
         public:
 
             Player()
+                : _position{300.f, 50.f}
+                , _shape{30.f}
             {
-                _position = sf::Vector2f{ 300.f, 50.f };
+                // _position = sf::Vector2f{ 300.f, 50.f };
 
-                _shape = sf::CircleShape(30.f);
+                // _shape = sf::CircleShape(30.f);
                 _shape.setFillColor(sf::Color::Green);
                 _shape.setPosition(_position);
             }

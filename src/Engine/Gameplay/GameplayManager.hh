@@ -18,7 +18,7 @@ namespace gameplay
             bool setUp();
             void tearDown();
 
-            void update(input::InputManager &input);
+            void update(const input::InputManager &input);
 
             Scene& getCurrentScene()
             {
