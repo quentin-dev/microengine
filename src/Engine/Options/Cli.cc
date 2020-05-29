@@ -28,7 +28,12 @@ namespace options
         (
             "dry-run",
             boostpo::bool_switch()->default_value(false),
-            "run only setup and tear down"
+            "only run the set up and tear down steps"
+        )
+        (
+            "disable-graphics",
+            boostpo::bool_switch()->default_value(false),
+            "disable the graphics manager"
         );
     }
 

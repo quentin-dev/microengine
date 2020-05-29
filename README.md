@@ -48,6 +48,8 @@ By order of likeliness:
 * `--help`: display µEngine options
 * `--settings-file`: path to the settings file - defaults to `config/settings.toml`
 * `--settings-format`: format of the settings file - defaults to 'toml'
+* '--dry-run': only run the set up and tear down steps
+* '--disable-graphics': disable the graphics manager
 
 ### Settings
 

@@ -2,6 +2,7 @@
 
 #include <boost/property_tree/ptree.hpp>
 #include <SFML/Window.hpp>
+#include <string_view>
 
 #include "../../external/toml.hpp"
 
@@ -16,8 +17,8 @@ namespace settings
             ~GraphicsSettings() = default;
 
             static GraphicsSettings fromFile(
-                const std::string &settingsFile,
-                const std::string &settingsFormat
+                const std::string_view &settingsFile,
+                const std::string_view &settingsFormat
             );
 
             static GraphicsSettings fromIni(boost::property_tree::ptree &pt);

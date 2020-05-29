@@ -15,7 +15,7 @@ build:linux:
 run:linux:
     stage: run
     script:
-        - ./build/µEngine --dry-run
+        - ./build/µEngine --dry-run --disable-graphics
     dependencies:
         - build:linux
 

@@ -4,6 +4,7 @@
 #include "Graphics/GraphicsManager.hh"
 #include "Input/InputManager.hh"
 #include "Gameplay/GameplayManager.hh"
+#include "Settings/EngineSettings.hh"
 
 namespace engine
 {
@@ -14,7 +15,7 @@ namespace engine
             Engine() = default;
             ~Engine() = default;
 
-            void setUp(const std::string settingsFile, const std::string settingsFormat);
+            void setUp(const settings::EngineSettings &settings);
             void tearDown();
 
             void run();

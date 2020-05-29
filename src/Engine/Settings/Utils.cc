@@ -2,13 +2,16 @@
 
 namespace settings::utils
 {
-    boost::property_tree::ptree readIni(const std::string &pathToIni)
+    boost::property_tree::ptree readIni(const std::string_view &pathToIni)
     {
         boost::property_tree::ptree pt;
 
         if (std::filesystem::exists(pathToIni))
         {
-            boost::property_tree::ini_parser::read_ini(pathToIni, pt);
+            boost::property_tree::ini_parser::read_ini(
+                static_cast<std::string>(pathToIni),
+                pt
+            );
         }
         else
         {
@@ -20,7 +23,7 @@ namespace settings::utils
         return pt;
     }
 
-    toml::parse_result readToml(const std::string &pathToToml)
+    toml::parse_result readToml(const std::string_view &pathToToml)
     {
         toml::parse_result config;
 

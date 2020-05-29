@@ -8,12 +8,18 @@
 namespace engine
 {
 
-    void Engine::setUp(const std::string settingsFile, const std::string settingsFormat)
+    void Engine::setUp(const settings::EngineSettings &settings)
     {
         auto graphicsSettings = 
-             settings::GraphicsSettings::fromFile(settingsFile, settingsFormat);
+             settings::GraphicsSettings::fromFile(
+                 settings.settingsFile, settings.settingsFormat
+             );
 
-        _graphics.setUp(graphicsSettings);
+        if (!settings.disableGraphics)
+        {
+            _graphics.setUp(graphicsSettings);
+        }
+
         _gameplay.setUp();
         _input.setUp();
     }

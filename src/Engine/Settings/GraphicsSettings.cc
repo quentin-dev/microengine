@@ -6,7 +6,9 @@
 
 namespace settings
 {
-    GraphicsSettings GraphicsSettings::fromFile(const std::string &settingsFile, const std::string &settingsFormat)
+    GraphicsSettings GraphicsSettings::fromFile(
+        const std::string_view &settingsFile,
+        const std::string_view &settingsFormat)
     {
         if (settingsFormat.compare(options::Cli::INI) == 0)
         {
